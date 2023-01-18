@@ -55,6 +55,7 @@ function chatStripe (isAi, value, uniqueId){
     `
   )
 }
+
 const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -76,7 +77,7 @@ const handleSubmit = async (e) => {
 
   loader(messageDiv);
 
-  const response = await fetch('https://openai-sfw3.onrender.com' , {
+  const response = await fetch('https://openai-sfw3.onrender.com/' , {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
