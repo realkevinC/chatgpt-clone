@@ -32,3 +32,11 @@ function typeText(element, text){
     }
   }, 20);
 }
+
+function generateUniqueId() {
+  const timestamp = Date.now();
+  const randomNum = Math.random();
+  const hexadecimalString = randomNum.toString(16);
+
+  return `id-${timestamp}-${hexadecimalString}`;
+}
