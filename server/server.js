@@ -11,10 +11,10 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const app = express();
+const app = express()
 
-app.use(cors());
-app.use(express.json());
+app.use(cors())
+app.use(express.json())
 
 app.get('/', async (req, res) => {
     res.status(200).send({
@@ -37,11 +37,12 @@ app.post('/', async(req, res) =>{
           });
           res.status(200).send({
             bot: response.data.choices[0].text
-          })
+          });
+
     } catch (error){
         console.log(error);
-        res.status(500).send({error})
+        res.status(500).send(error || "Something when wrong")
     }
 })
 
-app.listen(4000, () => console.log('AI server started on http://localhost:4000'))
+app.listen(3000, () => console.log('AI server started on http://localhost:3000'))

@@ -77,7 +77,8 @@ const handleSubmit = async (e) => {
 
   loader(messageDiv);
 
-  const response = await fetch('https://openai-sfw3.onrender.com/', {
+  //to run local server replace fetch with 'http://localhost:3000/'
+  const response = await fetch('https://openai-sfw3.onrender.com', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
